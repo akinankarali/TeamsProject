@@ -1,0 +1,296 @@
+* {
+    box-sizing: border-box
+}
+
+body {
+    background-color: #F6F6F6;
+}
+
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Dosis', sans-serif;
+    line-height: 1.6;
+    color: #666;
+    background: #F6F6F6;
+}
+
+#app {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    background-color: #484c7f;
+    margin: 0 0 2rem 0;
+    font-size: 1.5rem;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    margin: 1rem auto;
+    max-width: 100%;
+}
+
+p {
+    padding: 0 2.5rem 2.5rem;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.column {
+    display: contents;
+}
+
+
+/* Card */
+
+.card {
+    margin: 1rem;
+    background: white;
+    box-shadow: 2px 4px 25px rgba(0, 0, 0, .1);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all .2s linear;
+    max-width: 348px;
+}
+
+.card:hover {
+    box-shadow: 2px 8px 45px rgba(0, 0, 0, .15);
+    transform: translate3D(0, -2px, 0);
+}
+
+@media screen and (min-width: 600px) {
+    .card {
+        flex: 1 1 calc(50% - 2rem);
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .card {
+        flex: 1 1 calc(33% - 2rem);
+    }
+}
+
+.card:nth-child(2n) h1 {
+    background-color: #484c7f;
+}
+
+.card:nth-child(4n) h1 {
+    background-color: #484c7f;
+}
+
+.card:nth-child(5n) h1 {
+    background-color: #484c7f;
+}
+
+
+/* Modal */
+
+:root {
+    --modal-duration: 0.6s;
+    --modal-color: #484c7f;
+}
+
+.modal {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    margin: 10% auto;
+    width: 60%;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+    animation-name: modalopen;
+    animation-duration: var(--modal-duration);
+    border-radius: 8px;
+}
+
+.modal-header h2,
+.modal-footer h3 {
+    margin: 0px 0px 0px 10px;
+}
+
+.modal-header {
+    background: var(--modal-color);
+    padding: 15px;
+    color: #fff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.modal-body {
+    padding: 50px 20px;
+    background: #fff;
+}
+
+.modal-body p {
+    margin-top: 25px;
+}
+
+.modal-footer {
+    background: var(--modal-color);
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.close {
+    color: #ccc;
+    float: right;
+    font-size: 30px;
+    color: #fff;
+}
+
+.close:hover,
+.close:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@keyframes modalopen {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.icons {
+    height: 20px;
+    width: 20px;
+    display: block;
+    margin-right: 10px;
+}
+
+.iconsParag {
+    display: flex;
+    align-items: center;
+}
+
+img {
+    cursor: pointer;
+}
+
+.popularMessageIcons {
+    margin-right: 50%;
+}
+
+.popularMessageParags {
+    border-bottom: 0px solid #eeee !important;
+    margin-bottom: -30px;
+}
+
+.totalReactionParag {
+    margin-bottom: -30px;
+}
+
+.hollow-dots-spinner {
+    margin-left: 430px;
+}
+
+.loading {
+    display: flex;
+    align-items: center;
+}
+
+.Logo-Click {
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+}
+
+.Logo-Click-h {
+    margin-left: 356px;
+}
+
+.load {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media only screen and (max-width:768px) {
+    .modal-body {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .popularMessageIcons {
+        display: none;
+    }
+    .modal-footer p {
+        display: none;
+    }
+    .modal-header {
+        display: flex;
+        align-items: center;
+        flex-direction: column-reverse;
+    }
+}
+
+@media only screen and (min-width:769px) and (max-width:1100px) {
+    .modal-body {
+        display: flex;
+        flex-direction: column;
+    }
+    .popularMessageIcons {
+        display: flex;
+        align-items: center;
+    }
+    .modal-footer p {
+        display: none;
+    }
+}
+
+@media only screen and (min-width:992px) and (max-width:1200px) {
+    .hollow-dots-spinner {
+        margin-left: 330px;
+    }
+    .Logo-Click-h {
+        margin-left: 256px;
+    }
+}
+
+@media only screen and (min-width:768px) and (max-width:991px) {
+    .hollow-dots-spinner {
+        margin-left: 220px;
+    }
+    .Logo-Click-h {
+        margin-left: 156px;
+    }
+}
+
+@media only screen and (max-width:767px) {
+    .hollow-dots-spinner {
+        margin-left: 100px;
+    }
+    .Logo-Click-h {
+        margin-left: 56px;
+    }
+}
